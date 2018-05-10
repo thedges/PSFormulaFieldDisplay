@@ -19,7 +19,7 @@ public class PSFormulaFieldDisplayController {
             {
                 // String userType = UserInfo.getUserType(); // https://developer.salesforce.com/forums/?id=906F000000094P2IAI
                 String userId = UserInfo.getUserId();
-                User u = [SELECT Id, ContactId FROM User WHERE Id = :userId LIMIT 1];
+                User u = [SELECT Id, ContactId, MediumPhotoUrl FROM User WHERE Id = :userId LIMIT 1];
                 recId = u.ContactId;
             }
             else if (sourceType == 'User')
@@ -48,6 +48,28 @@ public class PSFormulaFieldDisplayController {
                     resp.data = obj.get(fieldAPIName);
                 }
             }
+        }
+        catch (exception e)
+        {
+            resp.status = PSResponse.ERROR;
+            resp.msg = e.getMessage();
+        }
+        
+        return  JSON.serialize(resp);
+        
+    }
+    
+    @AuraEnabled
+    public static String queryChatterPhoto()
+    {
+        PSResponse resp = new PSResponse();
+        
+        try
+        {
+ 
+            String userId = UserInfo.getUserId();
+            User u = [SELECT Id, MediumPhotoUrl FROM User WHERE Id = :userId LIMIT 1];
+            resp.data = u.MediumPhotoUrl;
         }
         catch (exception e)
         {

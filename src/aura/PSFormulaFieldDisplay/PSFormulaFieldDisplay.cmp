@@ -1,10 +1,14 @@
 <aura:component controller="PSFormulaFieldDisplayController"  implements="flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
     <aura:attribute name="showHeader" type="String" default="true" />
+    <aura:attribute name="useChatterPhoto" type="String" default="false" />
+    <aura:attribute name="chatterPhotoURL" type="String" default="https://thdevorg-dev-ed--c.na40.content.force.com/profilephoto/72946000000XoZD/M"></aura:attribute>
     <aura:attribute name="headerBackgroundImage" type="String" default="/resource/SampleProfileBackground"></aura:attribute>
     <aura:attribute name="headerBackgroundColor" type="String" default=""></aura:attribute>
     <aura:attribute name="headerLogoIcon" type="String" default="/resource/SampleProfileLogo"></aura:attribute>
     <aura:attribute name="cardLabel" type="String" default="Card Title"></aura:attribute>
     <aura:attribute name="cardLabelColor" type="String" default="#15325A"></aura:attribute>
+    <aura:attribute name="border" type="String" default="false"></aura:attribute>
+    <aura:attribute name="borderColor" type="String" default="#6794c2 "></aura:attribute>
     
     <aura:attribute name="sourceType" type="String" />
 	<aura:attribute name="fieldAPIName" type="String" />
@@ -12,7 +16,7 @@
     
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
 
-    <div class="slds-card insightsContainer runtime_sales_insightsInsightsContainer SFX_HOME" >
+    <div class="slds-card insightsContainer runtime_sales_insightsInsightsContainer SFX_HOME" style="{!v.border == 'true' ? 'border-color: ' + v.borderColor + ';' : 'border:none;'}">
         <aura:if isTrue="{!v.showHeader == 'true'}">
         <div class="slds-card__header slds-grid">
             <h2 class="einstein-logo-hdr slds-text-heading_small">
@@ -22,7 +26,12 @@
                                   v.headerBackgroundColor + ';'}">
                         <span class="einstein-label" style="{!'color:' + v.cardLabelColor}">{!v.cardLabel}</span>
                         <span class="uiImage">
-                            <img class="einstein-header-icon" src="{!v.headerLogoIcon}" ></img>
+                            <aura:if isTrue="{!v.useChatterPhoto == 'false'}">
+                              <img class="einstein-header-icon" src="{!v.headerLogoIcon}" ></img>
+                            </aura:if>
+                            <aura:if isTrue="{!v.useChatterPhoto == 'true'}">
+                              <img src="{!v.chatterPhotoURL}" style="border-radius: 50%; border-color: grey;" height="80" width="80"></img>
+                            </aura:if>
                         </span>
                     </div>
                 </span>

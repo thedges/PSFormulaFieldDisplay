@@ -1,6 +1,7 @@
 .THIS.runtime_sales_insightsInsightsContainer {
-    border: none;
+    borderX: none;
     padding-bottom: 2px;
+    border-radius:5px;
 }
 
 .THIS.runtime_sales_insightsInsightsContainer.SFX_HOME .slds-card__header {

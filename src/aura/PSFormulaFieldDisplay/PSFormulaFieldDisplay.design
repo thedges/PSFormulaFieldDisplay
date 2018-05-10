@@ -1,5 +1,6 @@
 <design:component label="PSFormulaFieldDisplay">
   <design:attribute name="showHeader" label="Show card header" Description="Show or hide card header section" datasource="true, false"/>
+  <design:attribute name="useChatterPhoto" label="Utilize chatter photo" Description="Use chatter photo for header section logo" datasource="true, false"/>
   <design:attribute name="cardLabel" label="Card title" Description="Label at top of card"/>
   <design:attribute name="cardLabelColor" label="Card title color" Description="Color of label at top of card"/>
   <design:attribute name="headerLogoIcon" label="Header logo" Description="Icon to show on right-side of header section"/> 
@@ -7,4 +8,7 @@
   <design:attribute name="headerBackgroundColor" label="Header background color" Description="Background color for header section (this will override background image)"/>
   <design:attribute name="sourceType" label="Source for data" Description="Source for object for formula field: Contact (community), User, Record" datasource="Contact, User, Record" />
   <design:attribute name="fieldAPIName" label="Formula field API name" Description="The sobject formula field API name"  />
+  <design:attribute name="border" label="Show border around component" Description="Typically used in community to help with 'white space'"  datasource="true, false"/>
+  <design:attribute name="borderColor" label="Hex value for border color" Description="The hex value for border color (ex: #6794c2)"  />
+
 </design:component>
