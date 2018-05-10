@@ -1,6 +1,8 @@
 # PSFormulaFieldDisplay
 
-This package contains a Lightning Component (LC) to show the HTML rendering of a custom formula field. The formula field needs to be constructed to render HTML using various HTML tags as needed to get the display desired. It was created for demos to quickly add record details to a page and allow the demo engineer to control the layout/styling without having to create a new custom LC. And since this runs within a Lightning Component, you have access to CSS style classes defined in the [Lightning Design System](https://www.lightningdesignsystem.com/getting-started/) to use within your HTML markup. 
+This package contains a Lightning Component (LC) to show the HTML rendering of a custom formula field. The formula field needs to be constructed to render HTML using various HTML tags as needed to get the display desired (or if you just want to mock something for a demo, you could create regular text field that stores HTML). It was created for demos to quickly add record details to a page and allow the demo engineer to control the layout/styling without having to create a new custom LC. And since this runs within a Lightning Component, you have access to CSS style classes defined in the [Lightning Design System](https://www.lightningdesignsystem.com/getting-started/) to use within your HTML markup. Here is sample:
+
+![alt text](https://github.com/thedges/PSFormulaFieldDisplay/blob/master/PSFormulaFieldDisplay.png "Sample Image")
 
 This component has 8 configuration parameters:
 * <b>Show/Hide Header Section</b> - show or hide the header section
