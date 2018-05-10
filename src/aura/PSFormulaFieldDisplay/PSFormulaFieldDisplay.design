@@ -1,4 +1,10 @@
 <design:component label="PSFormulaFieldDisplay">
-    <design:attribute name="sourceType" label="Source for data" Description="Source for object for formula field: Contact (community), User, Record" datasource="Contact, User, Record" />
-    <design:attribute name="fieldAPIName" label="Formula field API name" Description="The sobject formula field API name"  />
+  <design:attribute name="showHeader" label="Show card header" Description="Show or hide card header section" datasource="true, false"/>
+  <design:attribute name="cardLabel" label="Card title" Description="Label at top of card"/>
+  <design:attribute name="cardLabelColor" label="Card title color" Description="Color of label at top of card"/>
+  <design:attribute name="headerLogoIcon" label="Header logo" Description="Icon to show on right-side of header section"/> 
+  <design:attribute name="headerBackgroundImage" label="Header background image" Description="Background image for header section" />
+  <design:attribute name="headerBackgroundColor" label="Header background color" Description="Background color for header section (this will override background image)"/>
+  <design:attribute name="sourceType" label="Source for data" Description="Source for object for formula field: Contact (community), User, Record" datasource="Contact, User, Record" />
+  <design:attribute name="fieldAPIName" label="Formula field API name" Description="The sobject formula field API name"  />
 </design:component>

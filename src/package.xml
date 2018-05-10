@@ -8,5 +8,10 @@
         <members>PSFormulaFieldDisplay</members>
         <name>AuraDefinitionBundle</name>
     </types>
+    <types>
+        <members>SampleProfileBackground</members>
+        <members>SampleProfileLogo</members>
+        <name>StaticResource</name>
+    </types>
     <version>39.0</version>
 </Package>
