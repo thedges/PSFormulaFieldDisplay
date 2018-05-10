@@ -16,6 +16,7 @@
 	<aura:attribute name="fieldHTML" type="String" default=""/>
     
     <aura:handler name="render" value="{!this}" action="{!c.doInit}" />
+    <aura:handler event="force:refreshView" action="{!c.doInit}" />
 
     <div class="slds-card insightsContainer runtime_sales_insightsInsightsContainer SFX_HOME" style="{!v.border == 'true' ? 'border-color: ' + v.borderColor + ';' : 'border:none;'}">
         <aura:if isTrue="{!v.showHeader == 'true'}">
@@ -28,7 +29,7 @@
                         <span class="einstein-label" style="{!'color:' + v.cardLabelColor}">{!v.cardLabel}</span>
                         <span class="uiImage">
                             <aura:if isTrue="{!v.photoSource == 'Default'}">
-                              <img class="einstein-header-icon" src="{!v.headerLogoIcon}" ></img>
+                              <img src="{!v.headerLogoIcon}" height="80" width="80"></img>
                             </aura:if>
                             <aura:if isTrue="{!v.photoSource != 'Default'}">
                               <img src="{!v.photoURL}" style="border-radius: 50%; border-color: grey;" height="80" width="80"></img>
