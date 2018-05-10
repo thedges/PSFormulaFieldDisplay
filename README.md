@@ -6,7 +6,8 @@ This package contains a Lightning Component (LC) to show the HTML rendering of a
 
 This component has 11 configuration parameters:
 * <b>Show/Hide Header Section</b> - show or hide the header section
-* <b>Use Chatter Photo</b> - use chatter photo as header logo instead of header logo defined below
+* <b>Source of photo</b> - where to get photo/logo to show in header section; picklist 3 options: 1) Default - use the value defined in header logo below, 2) Record - get photo URL from the current record and use field API name in next config parameter, or 3) Chatter - use the current users chatter photo on the user object
+* <b>Photo field API name</b> - field API name on current record to retrieve photo URL
 * <b>Card title</b> - the text for the title of the card to be displayed in header section
 * <b>Card title color</b> - the text color for the title of the card to be displayed in header section
 * <b>Header logo</b> - the icon to show on right-side of header section; this should be relative URL to a static resource file; default is logo at "/resource/SampleProfileLogo"; if you use custom logo icon, suggest to adjust height to about 90px; <b>NOTE: if you are using the component in a community, you need to add your community prefix to the URL reference. For example, if you have a community with name "dev", then your reference should be "/dev/resource/SampleProfileLogo"</b>
