@@ -1,0 +1,4 @@
+<design:component label="PSFormulaFieldDisplay">
+    <design:attribute name="sourceType" label="Source for data" Description="Source for object for formula field: Contact (community), User, Record" datasource="Contact, User, Record" />
+    <design:attribute name="fieldAPIName" label="Formula field API name" Description="The sobject formula field API name"  />
+</design:component>
