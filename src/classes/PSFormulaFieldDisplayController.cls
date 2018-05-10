@@ -60,16 +60,45 @@ public class PSFormulaFieldDisplayController {
     }
     
     @AuraEnabled
-    public static String queryChatterPhoto()
+    public static String queryPhoto(String params)
     {
+        System.debug('params=' + params);
+        Map<String, String> paramMap = (Map<String, String>)JSON.deserialize(params,   Map<String, String>.class);
         PSResponse resp = new PSResponse();
         
         try
         {
- 
-            String userId = UserInfo.getUserId();
-            User u = [SELECT Id, MediumPhotoUrl FROM User WHERE Id = :userId LIMIT 1];
-            resp.data = u.MediumPhotoUrl;
+            String recId = paramMap.get('recId');
+            String photoSource = paramMap.get('photoSource');
+            String photoFieldAPIName = paramMap.get('photoFieldAPIName');
+            
+            resp.data = '';
+            
+            if (photoSource == 'Record')
+            {
+                if (recId != null)
+                {
+                    Id rId = Id.valueOf(recId);
+                    Schema.SObjectType token = rId.getSObjectType();
+                    Schema.DescribeSObjectResult dr = token.getDescribe();
+                    String objectName = dr.getName();
+                    
+                    if (objectName != null)
+                    {
+                        String queryStr = 'SELECT Id, ' + photoFieldAPIName + ' FROM ' + dr.getName() + ' WHERE Id=\'' + recId + '\' LIMIT 1';
+                        
+                        SObject obj = Database.query(queryStr);               
+                        resp.data = obj.get(photoFieldAPIName);
+                    }
+                }
+            }
+            else if (photoSource == 'Chatter')
+            {
+                String userId = UserInfo.getUserId();
+                User u = [SELECT Id, MediumPhotoUrl FROM User WHERE Id = :userId LIMIT 1];
+                resp.data = u.MediumPhotoUrl;
+            }
+            
         }
         catch (exception e)
         {

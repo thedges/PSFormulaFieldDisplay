@@ -1,6 +1,7 @@
 <design:component label="PSFormulaFieldDisplay">
   <design:attribute name="showHeader" label="Show card header" Description="Show or hide card header section" datasource="true, false"/>
-  <design:attribute name="useChatterPhoto" label="Utilize chatter photo" Description="Use chatter photo for header section logo" datasource="true, false"/>
+  <design:attribute name="photoSource" label="Source of photo" Description="Where to get photo to override default logo" datasource="Default, Record, Chatter"/>
+  <design:attribute name="photoFieldAPIName" label="Field API name for photo URL" Description="Field API name on record to retrieve photo URL" />
   <design:attribute name="cardLabel" label="Card title" Description="Label at top of card"/>
   <design:attribute name="cardLabelColor" label="Card title color" Description="Color of label at top of card"/>
   <design:attribute name="headerLogoIcon" label="Header logo" Description="Icon to show on right-side of header section"/> 

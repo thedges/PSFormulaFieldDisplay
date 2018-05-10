@@ -1,9 +1,9 @@
 ({
     doInit : function(component, event, helper) {
 
-      if (component.get("v.useChatterPhoto") == 'true')
+      if (component.get("v.photoSource") != '')
       {
-          helper.getChatterPhoto(component);
+          helper.getPhoto(component);
       }
         
       helper.executeQuery(component);

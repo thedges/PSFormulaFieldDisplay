@@ -9,7 +9,6 @@
         paramMap['recId'] = component.get("v.recordId");
         paramMap['sourceType'] = component.get("v.sourceType");
         paramMap['fieldAPIName'] = component.get("v.fieldAPIName");
-        paramMap['useChatterPhoto'] = component.get("v.useChatterPhoto");
         
         action.setParams({
             "params": JSON.stringify(paramMap)
@@ -34,18 +33,33 @@
             }
             else
             {
-                document.getElementById(globalId + '_fieldHTML').innerHTML = resp.data;
+                try
+                {
+                  document.getElementById(globalId + '_fieldHTML').innerHTML = resp.data;
+                }
+                catch (err)
+                {
+                   // consume exception
+                }
             }
         });
         
         $A.enqueueAction(action);
 	},
-    getChatterPhoto : function(component) {
-		       //////////////////////
+    getPhoto : function(component) {
+		//////////////////////
         // setup apex query //
         //////////////////////
-        var action = component.get("c.queryChatterPhoto");
+        var action = component.get("c.queryPhoto");
         
+        var paramMap = {};
+        paramMap['recId'] = component.get("v.recordId");
+        paramMap['photoSource'] = component.get("v.photoSource");
+        paramMap['photoFieldAPIName'] = component.get("v.photoFieldAPIName");
+                 
+        action.setParams({
+            "params": JSON.stringify(paramMap)
+        });
         /////////////////////
         // handle callback //
         /////////////////////
@@ -66,11 +80,11 @@
             {
                 if (resp.data != null && resp.data != '')
                 {
-                  component.set("v.chatterPhotoURL", resp.data);
+                  component.set("v.photoURL", resp.data);
                 }
                 else
                 {
-                  component.set("v.chatterPhotoURL", component.get("v.headerLogoIcon"));
+                  component.set("v.photoURL", component.get("v.headerLogoIcon"));
                 }
             }
         });
