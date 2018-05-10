@@ -4,8 +4,9 @@ This package contains a Lightning Component (LC) to show the HTML rendering of a
 
 ![alt text](https://github.com/thedges/PSFormulaFieldDisplay/blob/master/PSFormulaFieldDisplay.png "Sample Image")
 
-This component has 8 configuration parameters:
+This component has 11 configuration parameters:
 * <b>Show/Hide Header Section</b> - show or hide the header section
+* <b>Use Chatter Photo</b> - use chatter photo as header logo instead of header logo defined below
 * <b>Card title</b> - the text for the title of the card to be displayed in header section
 * <b>Card title color</b> - the text color for the title of the card to be displayed in header section
 * <b>Header logo</b> - the icon to show on right-side of header section; this should be relative URL to a static resource file; default is logo at "/resource/SampleProfileLogo"; if you use custom logo icon, suggest to adjust height to about 90px 
@@ -13,6 +14,8 @@ This component has 8 configuration parameters:
 * <b>Header background color</b> - the background color of the header section (this will override the background image)
 * <b>Source of Data</b> - picklist of 3 options here: 1) Contact - access formula field on contact record of current logged in community user, 2) User - access formula field on user record of current logged in user, 3) Record - access formula field on current record that you are displaying
 * <b>Field API Name</b> - the API name of the field to query on the contact, user, or record (as configured above)
+* <b>Show border</b> - show a thin border around the component; don't need this for internal Salesforce usage but should use in community to help with 'white space'
+* <b>Border color</b> - the hex value for border color (ex: #6794c2) 
 
 For example, let's say you want to create a custom formula field on the User object called "Test Formula HTML". The formula field could be constructed with following:
 
