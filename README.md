@@ -29,7 +29,7 @@ Here is sample screenshot of formula field configuration:
 
 Next drag and drop the PSFormulaFieldDisplay component on your page and configure. For this sample, I dropped on a Case page but configured to pull data from the User record. Here is sample screen shot of configuration:
 
-![alt text](https://github.com/thedges/PSFormulaFieldDisplay/blob/master/PSFormulaFieldDisplay-2.png "Sample Image")
+![alt text](https://github.com/thedges/PSFormulaFieldDisplay/blob/master/PSFormulaFieldDisplay-3.png "Sample Image")
 
 <a href="https://githubsfdeploy.herokuapp.com">
   <img alt="Deploy to Salesforce"
