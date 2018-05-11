@@ -14,7 +14,7 @@ This component has 11 configuration parameters:
 * <b>Header background image</b> - the background image of the header section; this should be relative URL to a static resource file; default is people image at "/resource/SampleProfileBackground"; if you create your own, create image approx H: 81px and W:844px; <b>NOTE: if you are using the component in a community, you need to add your community prefix to the URL reference. For example, if you have a community with name "dev", then your reference should be "/dev/resource/SampleProfileBackground"</b>
 * <b>Header background color</b> - the background color of the header section (this will override the background image)
 * <b>Source of Data</b> - picklist of 3 options here: 1) Contact - access formula field on contact record of current logged in community user, 2) User - access formula field on user record of current logged in user, 3) Record - access formula field on current record that you are displaying
-* <b>Field API Name</b> - the API name of the field to query on the contact, user, or record (as configured above)
+* <b>Field API Name</b> - the API name of the HTML field (formula field or text field) to query on the contact, user, or record (as configured above)
 * <b>Show border</b> - show a thin border around the component; don't need this for internal Salesforce usage but should use in community to help with 'white space'
 * <b>Border color</b> - the hex value for border color (ex: #6794c2) 
 
